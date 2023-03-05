@@ -3,7 +3,7 @@ import React from "react";
 
 const Footers = styled.footer`
   align-items: center;
-  padding: 10px 200px;
+  padding: 10px 10%;
   background: white;
 
 

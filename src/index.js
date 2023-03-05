@@ -2,8 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+import AddSong from "./componets/addSong";
 
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import createSagaMiddleware from "redux-saga";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
@@ -28,8 +30,12 @@ saga.run(songSaga);
 
 root.render(
   <Provider store={store}>
-    
-      <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}></Route>
+        <Route path="/addSong" element={<AddSong/>}></Route>
+      </Routes>
+    </BrowserRouter>
    
   </Provider>
 );

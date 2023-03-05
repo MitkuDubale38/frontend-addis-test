@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-
+import { Link } from "react-router-dom";
 export const StyledButton = styled.button`
   background-color: black;
   font-size: 32px;
@@ -18,7 +18,7 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 200px;
+  padding: 10px 10%;
   background: #262626;
 
 
@@ -35,7 +35,7 @@ const Header = styled.header`
     display: inline-block;
     color: #997a00;
     font-size: 20px;
-    padding-right:20px;
+    padding-right:0.9rem;
   }
   li:hover {
     color: #ffcc00;
@@ -50,10 +50,10 @@ export default function Head() {
   return (
     <div className="Header">
       <Header>
-        <h2>Addis Songs</h2>
+      <Link to="/" style={{ textDecoration: 'none' }}><h2>Addis Songs</h2></Link>
         <ul>
-        <li>Login</li>
-        <li>Signup</li>
+        <Link to="/addSong" style={{ textDecoration: 'none' }}><li>Add New Song</li></Link>
+        <li>Statistics</li>
         </ul>
         </Header>
       
