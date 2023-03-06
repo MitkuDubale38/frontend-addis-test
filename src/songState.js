@@ -3,7 +3,8 @@ export const SongSlice = createSlice({
     name: 'songs',
     initialState: {
         songs: [],
-        isLoading: false
+        isLoading: false,
+
     },
     reducers: {
         deleteSong: (state, action) => {

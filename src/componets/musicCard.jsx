@@ -28,7 +28,7 @@ const Wrapper = styled.section`
 `;
 
 export default function MusicCard() {
-  const songs = useSelector((state) => state.songs.songs);
+  const songs = useSelector((state) => state.songs.songs).slice().reverse();;
   const isLoading = useSelector((state) => state.songs.isLoading);
   const dispatch = useDispatch();
 

@@ -13,6 +13,12 @@ export default function Statistics() {
         <div>
             <Header />
             <p style={{color:"#262626",fontSize: 25, fontWeight:"bold",paddingLeft: "10%"}}>  Statistics</p>
+            <div style={{color:"#262626",fontSize: 20, fontWeight:"bold",paddingLeft: "10%"}}>
+            <p>Total Number of songs: </p>
+            <p>Total Number of artists: </p>
+            <p>Total Number of albums: </p>
+            <p>Total Number of genres: </p>
+            </div>
             <Footer />
         </div>
     );
