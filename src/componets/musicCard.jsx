@@ -6,6 +6,7 @@ import { faTrash, faPen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
+import { Link } from "react-router-dom";
 
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -64,7 +65,7 @@ export default function MusicCard() {
             icon={faTrash}
             style={{ marginRight: 20, color: "#262626" }}
           />
-          <FontAwesomeIcon icon={faPen} style={{ color: "#262626" }} />
+          <Link to={`/updateSong/${song._id}`}  state={{title: song.title, artist:song.artist, album:song.album,genre:song.genre}} style={{ textDecoration: 'none' }}><FontAwesomeIcon icon={faPen} style={{ color: "#262626" }} /></Link>
         </div>
         <div
           style={{

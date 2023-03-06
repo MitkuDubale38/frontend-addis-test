@@ -53,7 +53,7 @@ export default function Head() {
       <Link to="/" style={{ textDecoration: 'none' }}><h2>Addis Songs</h2></Link>
         <ul>
         <Link to="/addSong" style={{ textDecoration: 'none' }}><li>Add New Song</li></Link>
-        <li>Statistics</li>
+        <Link to="/statistics" style={{ textDecoration: 'none' }}><li>Statistics</li></Link>
         </ul>
         </Header>
       

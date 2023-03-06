@@ -51,10 +51,9 @@ function* addNewSong(action) {
 }
 
 
-function* updateSong(song, { payload }) {
+function* updateSong(song) {
     const { title, artist, album, genre } = song.payload;
-    const id = JSON.stringify(payload);
-    const _id = id.replace(/["']/g, "");
+    const _id = song.payload._id
     console.log(song);
     try {
         yield call(() =>
@@ -81,10 +80,9 @@ function* updateSong(song, { payload }) {
 }
 
 
-function* updateOldSong(action, { payload }) {
-    // console.log(action)
+function* updateOldSong(action) {
     try {
-        yield updateSong(action, { payload });
+        yield updateSong(action);
     } catch (e) {
         console.log(e)
     }

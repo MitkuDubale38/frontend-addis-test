@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import AddSong from "./componets/addSong";
+import UpdateSong from "./componets/updateSong";
+import Statistics from "./componets/statistics";
 
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -34,6 +36,8 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}></Route>
         <Route path="/addSong" element={<AddSong/>}></Route>
+        <Route path="/updateSong/:id" element={<UpdateSong/>}></Route>
+        <Route path="/statistics" element={<Statistics/>}></Route>
       </Routes>
     </BrowserRouter>
    

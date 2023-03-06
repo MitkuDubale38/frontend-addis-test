@@ -17,9 +17,9 @@ export const SongSlice = createSlice({
             state.songs = newSongs; // assigning new songs to songs
         },
         updateSong: (state, action) => {
-            const newSong = action.payload;
+            const updatedSong = action.payload;
             const existingSong = JSON.parse(JSON.stringify(state.songs));
-            const newSongs = [...existingSong, newSong]; //combining new song with previous songs
+            const newSongs = [...existingSong, updatedSong]; //combining updated song with previous songs
             state.songs = newSongs; // assigning new songs to songs
         },
         getSongsFetch: (state) => {
@@ -36,6 +36,6 @@ export const SongSlice = createSlice({
     }
 });
 
-export const { getSongsFailure, getSongsFetch, getSongsSuccess, deleteSong, addSong } = SongSlice.actions;
+export const { getSongsFailure, getSongsFetch, getSongsSuccess, deleteSong, addSong, updateSong } = SongSlice.actions;
 
 export default SongSlice.reducer;
