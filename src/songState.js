@@ -12,7 +12,15 @@ export const SongSlice = createSlice({
         },
         addSong: (state, action) => {
             const newSong = action.payload;
-            state.songs = state.songs.push(newSong);
+            const existingSong = JSON.parse(JSON.stringify(state.songs));
+            const newSongs = [...existingSong, newSong]; //combining new song with previous songs
+            state.songs = newSongs; // assigning new songs to songs
+        },
+        updateSong: (state, action) => {
+            const newSong = action.payload;
+            const existingSong = JSON.parse(JSON.stringify(state.songs));
+            const newSongs = [...existingSong, newSong]; //combining new song with previous songs
+            state.songs = newSongs; // assigning new songs to songs
         },
         getSongsFetch: (state) => {
             state.isLoading = true;
