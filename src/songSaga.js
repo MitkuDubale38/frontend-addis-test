@@ -15,17 +15,16 @@ function* workDeleteSong({ payload }) {
 }
 
 function* postNewSong(song) {
-    console.log("test inside");
-
-    const { title, artist, album, genre } = song;
+    const { title, artist, album, genre } = song.payload;
     console.log(song);
     try {
-        const data = yield call(() => {
-            return fetch("http://localhost:8000/api/songs/create", {
+        yield call(() =>
+            fetch("http://localhost:8000/api/songs/create", {
                 method: 'POST',
+                mode: "cors",
                 headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
+                    "Accept": "application/json, text/plain, */*",
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
                     title: title,
@@ -33,10 +32,10 @@ function* postNewSong(song) {
                     album: album,
                     genre: genre
                 }),
-            });
-        });
-        console.log("api req result")
-        console.log(data);
+            }).then(res => res.json())
+            .then(data => {
+                console.log(data)
+            }));
     } catch (error) {
         console.log(error);
     }
